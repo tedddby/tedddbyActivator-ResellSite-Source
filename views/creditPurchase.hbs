@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="author" content="Creative Tim">
+  <title>tedddbyResell - Purchase</title>
+  <!-- Favicon -->
+  <link rel="icon" href="assets/img/brand/icon.png" type="image/png">
+  <!-- Fonts -->
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700">
+  <!-- Icons -->
+  <link rel="stylesheet" href="assets/vendor/nucleo/css/nucleo.css" type="text/css">
+  <link rel="stylesheet" href="assets/vendor/@fortawesome/fontawesome-free/css/all.min.css" type="text/css">
+  <script src="https://js.stripe.com/v3"></script>
+  <!-- Argon CSS -->
+  <link rel="stylesheet" href="assets/css/argon.css?v=1.2.1" type="text/css">
+</head>
+
+<body class="bg-default">
+  <!-- Navbar -->
+  <nav id="navbar-main" class="navbar navbar-horizontal navbar-transparent navbar-main navbar-expand-lg navbar-light">
+    <div class="container">
+      <a class="navbar-brand" href="/dashboard">
+        <img src="assets/img/brand/icon.png">  tedddbyResell
+      </a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar-collapse" aria-controls="navbar-collapse" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="navbar-collapse navbar-custom-collapse collapse" id="navbar-collapse">
+        <div class="navbar-collapse-header">
+          <div class="row">
+            <div class="col-6 collapse-brand">
+              <a href="/dashboard">
+                <img src="assets/img/brand/icon.png">
+              </a>
+            </div>
+            <div class="col-6 collapse-close">
+              <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbar-collapse" aria-controls="navbar-collapse" aria-expanded="false" aria-label="Toggle navigation">
+                <span></span>
+                <span></span>
+              </button>
+            </div>
+          </div>
+        </div>
+        <hr class="d-lg-none" />
+        <ul class="navbar-nav align-items-lg-center ml-lg-auto">
+          <li class="nav-item d-none d-lg-block ml-lg-4">
+            <a href="javascript:;" target="_blank" class="btn btn-neutral btn-icon" onclick="document.location.assign('/dashboard')">
+              <span class="btn-inner--icon">
+                <i class="ni ni-user-run mr-2"></i>
+              </span>
+              <span class="nav-link-inner--text">Return to Dashboard</span>
+            </a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+  <!-- Main content -->
+  <div class="main-content">
+    <!-- Header -->
+    <div class="header bg-gradient-primary py-7 py-lg-8 pt-lg-9">
+      <div class="container">
+        <div class="header-body text-center mb-7">
+          <div class="row justify-content-center">
+            <div class="col-xl-5 col-lg-6 col-md-8 px-5">
+              <h1 class="text-white">Choose the package that fits your needs!</h1>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="separator separator-bottom separator-skew zindex-100">
+        <svg x="0" y="0" viewBox="0 0 2560 100" preserveAspectRatio="none" version="1.1" xmlns="http://www.w3.org/2000/svg">
+          <polygon class="fill-default" points="2560 0 2560 100 0 100"></polygon>
+        </svg>
+      </div>
+    </div>
+    <!-- Page content -->
+    <div class="container mt--8 pb-5">
+      <div class="row justify-content-center">
+        <div class="col-lg-10">
+          <div class="pricing card-group flex-column flex-md-row mb-3">
+
+            
+             <div class="card card-pricing border-0 text-center mb-4">
+              <div class="card-header bg-transparent">
+                <h4 class="text-uppercase ls-1 text-primary py-3 mb-0">Starter Pack</h4>
+              </div>
+              <div class="card-body px-lg-7">
+                <div class="display-2" id="sPrice">$30</div>
+                <span class="text-muted">30 Credits</span>
+                <ul class="list-unstyled my-4">
+                  <li>
+                    <div class="d-flex align-items-center">
+                      <div>
+                        <div class="icon icon-xs icon-shape bg-gradient-primary shadow rounded-circle text-white">
+                          <i class="fas fa-terminal"></i>
+                        </div>
+                      </div>
+                      <div>
+                        <span class="pl-2">Lifetime Credit Validity</span>
+                      </div>
+                    </div>
+                  </li>
+                  <li>
+                    <div class="d-flex align-items-center">
+                      <div>
+                        <div class="icon icon-xs icon-shape bg-gradient-primary shadow rounded-circle text-white">
+                          <i class="fas fa-pen-fancy"></i>
+                        </div>
+                      </div>
+                      <div>
+                        <span class="pl-2">Instant Credit Recharge</span>
+                      </div>
+                    </div>
+                  </li>
+                  <li>
+                    <div class="d-flex align-items-center">
+                      <div>
+                        <div class="icon icon-xs icon-shape bg-gradient-primary shadow rounded-circle text-white">
+                          <i class="fas fa-hdd"></i>
+                        </div>
+                      </div>
+                      <div>
+                        <span class="pl-2">7 Days Money Back Guarantee</span>
+                      </div>
+                    </div>
+                  </li>
+                </ul>
+                <button type="button" class="btn btn-primary mb-3" id="starterPay">Buy Now</button>
+              </div>
+              <div class="card-footer">
+                <a href="javascript:;" class="text-light">Credits will be added to <b><script>document.write("{{user.name}}".toUpperCase())</script></b></a>
+              </div>
+            </div>
+
+            <div class="card card-pricing bg-gradient-success zoom-in shadow-lg rounded border-0 text-center mb-4">
+              <div class="card-header bg-transparent">
+                <h4 class="text-uppercase ls-1 text-white py-3 mb-0">Custom Pack</h4>
+              </div>
+              <div class="card-body px-lg-7">
+                <div class="display-1 text-white" id="customPrice">$(?)</div>
+                <span class="text-white" id="customCredits">-- Credits</span>
+                <ul class="list-unstyled my-4">
+                  <li>
+                    <div class="d-flex align-items-center">
+                      <div>
+                        <div class="icon icon-xs icon-shape bg-white shadow rounded-circle text-muted">
+                          <i class="fas fa-terminal"></i>
+                        </div>
+                      </div>
+                      <div>
+                        <span class="pl-2 text-white">Your pack, your choice!</span>
+                      </div>
+                    </div>
+                  </li>
+                  <li>
+                    <div class="d-flex align-items-center">
+                      <div>
+                        <div class="icon icon-xs icon-shape bg-white shadow rounded-circle text-muted">
+                          <i class="fas fa-pen-fancy"></i>
+                        </div>
+                      </div>
+                      <div>
+                        <span class="pl-2 text-white">Lifetime Credit Validity</span>
+                      </div>
+                    </div>
+                  </li>
+                  <li>
+                    <div class="d-flex align-items-center">
+                      <div>
+                        <div class="icon icon-xs icon-shape bg-white shadow rounded-circle text-muted">
+                          <i class="fas fa-hdd"></i>
+                        </div>
+                      </div>
+                      <div>
+                        <span class="pl-2 text-white">7 Days Money Back Guarantee</span>
+                      </div>
+                    </div>
+                  </li>
+                </ul>
+                <form role="form">
+                                <div class="form-group mb-3">
+                                  <div class="input-group input-group-merge input-group-alternative">
+                                    <div class="input-group-prepend">
+                                      <span class="input-group-text"><i class="ni ni-money-coins"></i></span>
+                                    </div>
+                                    <input class="form-control" placeholder="Credit Amount" type="number" id="customCreditsInput" value="31">
+                                  </div>
+                                  <p id="note" class="text-danger" style="display: none;"></p>
+                                </div>
+                <div class="text-center">
+                <button type="button" class="btn btn-secondary mb-3" id="customPay">Buy Now</button>
+                </div>
+                </form>
+              </div>
+              <div class="card-footer bg-transparent">
+                <a href="javascript:;" class="text-light">Credits will be added to <b><script>document.write("{{user.name}}".toUpperCase())</script></b></a>
+              </div>
+            </div>
+
+            
+          </div>
+        </div>
+      </div>
+      <div class="d-flex justify-content-lg-center px-3 mt-5">
+        <div>
+          <div class="icon icon-shape bg-gradient-white shadow rounded-circle text-primary">
+            <i class="ni ni-building text-primary"></i>
+          </div>
+        </div>
+        <div class="col-lg-6">
+          <p class="text-white"><strong>The Arctic Ocean</strong> freezes every winter and much of the sea-ice then thaws every summer, and that process will continue whatever.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- Footer -->
+  <footer class="py-5" id="footer-main">
+    <div class="container">
+      <div class="row align-items-center justify-content-xl-between">
+        <div class="col-xl-6">
+          <div class="copyright text-center text-xl-left text-muted">
+            &copy; 2021 <a href="https://tedddby.com" class="font-weight-bold ml-1" target="_blank">tedddbyActivator</a>
+          </div>
+        </div>
+        <div class="col-xl-6">
+           <ul class="nav nav-footer justify-content-center justify-content-lg-end">
+            <li class="nav-item">
+              <a href="https://tedddby.com" class="nav-link" target="_blank">tedddbyActivator</a>
+            </li>
+            <li class="nav-item">
+              <a href="https://tedddby.com/#about" class="nav-link" target="_blank">About Us</a>
+            </li>
+            <li class="nav-item">
+              <a href="https://tedddby.com/privacy" class="nav-link" target="_blank">Privacy Policy</a>
+            </li>
+            </ul>
+        </div>
+      </div>
+    </div>
+  </footer>
+  <!-- Argon Scripts -->
+  <!-- Core -->
+  <script src="assets/vendor/jquery/dist/jquery.min.js"></script>
+  <script src="assets/vendor/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="assets/vendor/js-cookie/js.cookie.js"></script>
+  <script src="assets/vendor/jquery.scrollbar/jquery.scrollbar.min.js"></script>
+  <script src="assets/vendor/jquery-scroll-lock/dist/jquery-scrollLock.min.js"></script>
+  <!-- Argon JS -->
+  <script src="assets/js/argon.js?v=1.2.1"></script>
+  <script src="assets/js/credits.js"></script>
+</body>
+
+</html>
